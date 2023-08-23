@@ -23,7 +23,7 @@ char *get_full_path(char *command)
 		strcat(full_path, "/");
 		strcat(full_path, command);
 
-		if (access(full_path, X_OK) == 0);
+		if (access(full_path, X_OK) == 0)
 		{
 			return (full_path);
 		}
