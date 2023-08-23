@@ -5,19 +5,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys/stat.h>
-#include <signal.h>
 
 /* Function prototypes */
-void prompt(void);
-char *read_line(void);
-char **split_line(char *line);
-int execute(char **args);
-void free_args(char **args);
-int exit_builtin(char **args);
-int env_builtin(char **args);
+void display_prompt(void);
+char *read_command(void);
+int execute_command(char *command);
+void shell_main(void);
+void prompt_main(void);
 
 #endif /* MAIN_H */
 
