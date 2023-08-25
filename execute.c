@@ -1,13 +1,13 @@
 #include "main.h"
 
-int execv(char **args)
+int execute(char **argv)
 {
     int i;
     pid_t pid;
 
     if (pid == 0)
     {
-        int exe = execve(args[0], args, environ);
+        int exe = execve(argv[0], argv, environ);
 
         if (exe == -1)
             perror("Error");
@@ -16,8 +16,7 @@ int execv(char **args)
     }
     else
     {
-            wait(&i);
-
+            waitpid(&i);
             if(WIFEXITED(i))
                 i = WEXITSTATUS(i);
     }
