@@ -9,8 +9,10 @@ void *memory(unsigned int a, unsigned int b)
     for (; a && b;)
     {
         while (a == 0 || b == 0)
+        {
             return (status);
             break;
+        }
         
         k = malloc(a * b);
         

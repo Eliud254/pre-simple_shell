@@ -1,27 +1,29 @@
 #include "main.h"
 
-char *_getenv(char *_va)
+char *_getenv(char *env_var)
 {
-    int checker, i, j;
+    int checker;
+    int i = 0;
+    int j = 0;
 
-Here:
-    if (environ[i])
+
+    while (environ[i])
     {
         checker = 1;
 
 Again:
         if (environ[i][j] != '=')
         {
-            if(environ[i][j] != _va[j])
+            if(environ[i][j] != env_var[j])
                 checker = 0;
             j++;
             goto Again;
         }
 
-        while (checker == 1)
+        if (checker == 1)
             break;
 
-        goto Here;
+        i++;
     }
 
     return (&environ[i][j + 1]);
@@ -33,7 +35,9 @@ void _env(void)
 
 Here:
     if (environ[i])
+    {
         printf("%s\n", environ[i]);
         i++;
         goto Here;
+    }
 }

@@ -8,7 +8,7 @@ int _strcmp(char *a, char *b)
 
     for(i = 0; i < (*a && *b); i++)
     {
-        if (*a != *b);
+        if (*a != *b)
             return(*a - *b);
     }
 

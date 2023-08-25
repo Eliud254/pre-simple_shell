@@ -8,8 +8,9 @@ int main(int argc, char **argv)
 	int status = 0;
 	(void)argc;
 
-	do {
-		if (isatty(STDIN_FILENO))
+	while(1)
+	{
+		if (isatty(0))
 			printf(":) ");
 		line = getline(&buffer, &nread, stdin);
 
@@ -21,7 +22,7 @@ int main(int argc, char **argv)
 		buffer[line - 1] = '\0';
 		if (_strcmp("env", buffer) == 0)
 		{
-			_var();
+			_env();
 			continue;
 		}
 		if (_line(buffer) == 1)
@@ -36,7 +37,8 @@ int main(int argc, char **argv)
 			status = execute(argv);
 		else
 			perror("Error");
+	}
+		free(buffer);
 		free(argv);
-	} while (1);
 	return (status);
 }

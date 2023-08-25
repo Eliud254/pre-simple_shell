@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 
 extern char **environ;
@@ -17,7 +18,8 @@ int _strlen(char *str);
 char *_strcat(char *dest, const char *src);
 int _strcmp(char *a, char *b);
 char* _strcpy(char* dest, const char* src);
-char *_getenv(char *_var);
+void _env(void);
+char *_getenv(char *env_var);
 int execute(char **argv);
 void *memory(unsigned int a, unsigned int b);
 

@@ -1,7 +1,5 @@
 #include "main.h"
 
-// Not Edited.
-
 char **token(char *str, char *delim)
 {
     char *token, **tokens;
