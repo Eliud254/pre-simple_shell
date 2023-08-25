@@ -18,7 +18,7 @@ Here:
     while (src[n] != '\0')
     {
         n += 1;
-        dest[m] += src[n];
+        dest[m] = src[n];
         m++;
     }
 
@@ -28,11 +28,12 @@ Here:
 }
 
 
-/* ========================= Don't Copy this side ====================== */
+/* ========================= Implementations Example ====================== */
+
 int main()
 {
     char src[] = "Source File";
-    char dest[100] = "Destination File <--- ";
+    char dest[100];
 
     char *result1 = strcat(dest, src);
     char *result2 = _strcat(dest,src);

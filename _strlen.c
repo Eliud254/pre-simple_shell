@@ -21,8 +21,7 @@ End:
     return (c);
 }
 
-/* ========================= Dont Copy this side ====================== */
-
+/* ========================= Implementations Example ====================== */
 int main(void)
 {
     char ar[] = "Number"; // Number = 6 character.

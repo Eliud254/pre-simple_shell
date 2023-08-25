@@ -24,8 +24,7 @@ Here:
     return (str);
 }
 
-/* ========================= Dont Copy this side ====================== */
-
+/* ========================= Implementations Example ====================== */
 int main()
 {
     char src[] = "Source File";
