@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	while(1)
 	{
 		if (isatty(0))
-			printf(":) ");
+			printf("-> ");
 		line = getline(&buffer, &nread, stdin);
 
 		if (line == -1 || _strcmp("exit\n", buffer) == 0)
@@ -38,7 +38,6 @@ int main(int argc, char **argv)
 		else
 			perror("Error");
 	}
-		free(buffer);
 		free(argv);
 	return (status);
 }

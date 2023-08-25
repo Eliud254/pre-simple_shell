@@ -2,7 +2,8 @@
 
 int execute(char **argv)
 {
-    int status, pid;
+    int status;
+    pid_t pid;
 
     pid = fork();
 

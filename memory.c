@@ -4,20 +4,16 @@ void *memory(unsigned int a, unsigned int b)
 {
     char *k = NULL;
     unsigned int j = 0;
-    char *status = NULL;
 
-    for (; a && b;)
+    if(a && b)
     {
-        while (a == 0 || b == 0)
-        {
-            return (status);
-            break;
-        }
+        if(a == 0 || b == 0)
+            return (NULL);
         
         k = malloc(a * b);
         
         if (k == NULL)
-            return (status);
+            return (NULL);
         
         for(; j < (a * b); j++)
             k[j] = 0;
