@@ -2,23 +2,23 @@
 
 char **token(char *str, char *delim)
 {
-    char *token, **tokens;
+    char *stok, **stoks;
 	int count = 0;
 
-	token = strtok(str, delim);
-	tokens = (char **)memory(100, sizeof(char *));
+	stok = strtok(str, delim);
+	stoks = (char **)memory(100, sizeof(char *));
 
-	if (!tokens)
+	if (!stoks)
 	{
-		free(tokens);
+		free(stoks);
 		return (NULL);
 	}
 
-	while (token)
+	while (stok)
 	{
-		tokens[count] = token;
-		token = strtok(NULL, delim);
+		stoks[count] = stok;
+		stok = strtok(NULL, delim);
 		count++;
 	}
-	return (tokens);
+	return (stoks);
 }

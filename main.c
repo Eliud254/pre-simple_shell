@@ -14,13 +14,14 @@ int main(int argc, char **argv)
 			printf("-> ");
 		line = getline(&buffer, &nread, stdin);
 
-		if (line == -1 || _strcmp("exit\n", buffer) == 0)
+		if (line == -1 || strcmp("exit\n", buffer) == 0)
 		{
-			free(buffer);
-			break;
+			/* free(buffer); */
+			free(argv);
+			return(-1);
 		}
 		buffer[line - 1] = '\0';
-		if (_strcmp("env", buffer) == 0)
+		if (strcmp("env", buffer) == 0)
 		{
 			_env();
 			continue;
@@ -30,6 +31,7 @@ int main(int argc, char **argv)
 			status = 0;
 			continue;
 		}
+
 		argv = token(buffer, delim);
 		argv[0] = _path(argv[0]);
 
