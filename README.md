@@ -1,6 +1,6 @@
 # TEST PROJECT REPOSITORY
 
-[Warning!]
+[!WARNING]
 > This repository is not the actual project side.
 
 ## Learning Objectives
