@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 		buffer[line - 1] = '\0';
 		if (_strcmp("env", buffer) == 0)
 		{
-			_env();
+			_var();
 			continue;
 		}
 		if (_line(buffer) == 1)

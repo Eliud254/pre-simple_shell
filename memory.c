@@ -1,6 +1,6 @@
 #include "main.h"
 
-void memory(unsigned int a, unsigned int b)
+void *memory(unsigned int a, unsigned int b)
 {
     char *k = NULL;
     unsigned int j = 0;
@@ -19,7 +19,6 @@ void memory(unsigned int a, unsigned int b)
         
         for(; j < (a * b); j++)
             k[j] = 0;
-
     }
 
     return (k);

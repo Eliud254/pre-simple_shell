@@ -2,8 +2,9 @@
 
 int execute(char **argv)
 {
-    int i;
-    pid_t pid;
+    int i, pid;
+
+    pid = fork();
 
     if (pid == 0)
     {
@@ -16,7 +17,7 @@ int execute(char **argv)
     }
     else
     {
-            waitpid(&i);
+            wait(&i);
             if(WIFEXITED(i))
                 i = WEXITSTATUS(i);
     }

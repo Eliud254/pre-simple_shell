@@ -1,6 +1,6 @@
 #include "main.h"
 
-char *_getenv(char *_env)
+char *_getenv(char *_va)
 {
     int checker, i, j;
 
@@ -12,7 +12,7 @@ Here:
 Again:
         if (environ[i][j] != '=')
         {
-            if(environ[i][j] != _env[j])
+            if(environ[i][j] != _va[j])
                 checker = 0;
             j++;
             goto Again;

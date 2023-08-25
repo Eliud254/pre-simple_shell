@@ -17,8 +17,8 @@ int _strlen(char *str);
 char *_strcat(char *dest, const char *src);
 int _strcmp(char *a, char *b);
 char* _strcpy(char* dest, const char* src);
-char *_getenv(char *_env);
+char *_getenv(char *_var);
 int execute(char **argv);
-void memory(unsigned int a, unsigned int b);
+void *memory(unsigned int a, unsigned int b);
 
 #endif
