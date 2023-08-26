@@ -6,7 +6,7 @@ char **token(char *str, char *delim)
 	int count = 0;
 
 	stok = strtok(str, delim);
-	stoks = (char **)memory(100, sizeof(char *));
+	stoks = (void *)memory(100, sizeof(char **));
 
 	if (!stoks)
 	{

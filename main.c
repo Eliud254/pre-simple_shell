@@ -11,16 +11,16 @@ int main(int argc, char **argv)
 	while(1)
 	{
 		if (isatty(0))
-			printf("-> ");
+			printf("(hsh) $ ");
+
 		line = getline(&buffer, &nread, stdin);
 
 		if (line == -1 || strcmp("exit\n", buffer) == 0)
 		{
-			/* free(buffer); */
-			free(argv);
+			free(buffer);
 			return(-1);
 		}
-		buffer[line - 1] = '\0';
+		buffer[line - 1] = '\0' ;
 		if (strcmp("env", buffer) == 0)
 		{
 			_env();
@@ -39,7 +39,8 @@ int main(int argc, char **argv)
 			status = execute(argv);
 		else
 			perror("Error");
-	}
+
 		free(argv);
+	}
 	return (status);
 }

@@ -2,31 +2,19 @@
 
 char *_getenv(char *env_var)
 {
-    int checker;
-    int i = 0;
-    int j = 0;
+   int i = 0;
 
-
-    while (environ[i])
+  while (environ[i])
+  {
+    if (strncmp(environ[i], env_var, strlen(env_var)) == 0)
     {
-        checker = 1;
-
-Again:
-        if (environ[i][j] != '=')
-        {
-            if(environ[i][j] != env_var[j])
-                checker = 0;
-            j++;
-            goto Again;
-        }
-
-        if (checker == 1)
-            break;
-
-        i++;
+      return &environ[i][strlen(env_var) + 1];
     }
 
-    return (&environ[i][j + 1]);
+    i++;
+  }
+
+  return (NULL);
 }
 
 void _env(void)
